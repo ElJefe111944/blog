@@ -4,7 +4,7 @@ from .models import Post
 
 def post_list(request):
     posts = Post.published.all()
-    return render(request, 'myblog/blog/templates/post/list.html', {
+    return render(request, 'blog/post/list.html', {
         'posts': posts})
 
 
@@ -17,5 +17,5 @@ def post_detail(request, year, month, day, post):
                                 publish__month=month,
                                 publish__day=day
                             )
-    return render(request, 'myblog/blog/templates/post/detail.html', {
+    return render(request, 'blog/post/detail.html', {
         'post': post})
